@@ -1,0 +1,29 @@
+/* dashboard.css */
+
+.bbb--title {
+    font-size: 1.35rem;
+    text-transform: uppercase;
+}
+
+.bbb--label {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+}
+
+.bbb--label-white {
+    color: #ffffff;
+}
+
+.bbb--container-fluid {
+    width: 100%;
+    padding-right: 9.25rem;
+    padding-left: 9.25rem;
+    margin-right: auto;
+    margin-left: auto;    
+}
+
+
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}

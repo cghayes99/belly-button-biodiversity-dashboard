@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Belly Button Biodiversity - Dashboard</title>
+	<meta charset="utf-8" /> 
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">	
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-delta3.css') }}">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand bbb--label" data-href="#">Belly Button Biodiversity</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <select class="form-control" id="bbb--select-sample"></select>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-href="#"><span class="bbb--label"><i class="fas fa-vials fa-lg"></i> Select Sample</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar-fluid">
+            <ul class="nav nav-sidebar">
+                <li class="bbb--samples">
+                    <a data-href="#"><span class="bbb--label"><i class="fas fa-table fa-lg"></i> Sample Metadata</span></a>
+                </li>
+                <li class="bbb--samples">
+                    <div id="bbb--sample-metadata table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Sample</th>
+                                    <th><span id="bbb--meta-sample" class="bbb--metadata">940</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Age</th>
+                                    <th>Ethnicity</th>
+                                    <th>Gender</th>
+                                </tr>
+                                <tr>
+                                    <td><span id="bbb--meta-age" class="bbb--metadata">24</span></td>
+                                    <td><span id="bbb--meta-ethnicity" class="bbb--metadata">Caucasian</span></td>
+                                    <td><span id="bbb--meta-gender" class="bbb--metadata">F</span></td>
+                                </tr>
+                                <tr>
+                                    <th>BBType</th>
+                                    <th>Location</th>
+                                    <th>WFreq</th>
+                                </tr>
+                                <tr>
+                                    <td><span id="bbb--meta-bbtype" class="bbb--metadata">I</span></td>
+                                    <td><span id="bbb--meta-location" class="bbb--metadata">Beaufort/NC</span>B</td>
+                                    <td><span id="bbb--meta-wfreq" class="bbb--metadata">2</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main-fluid">
+            <h2 class="sub-header">Dashboard</h2>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                    <div id="bbb--pie-chart"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                    <div id="bbb--gauge-chart"></div>
+                </div>
+            </div>
+ 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div id="bbb--bubble-chart"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

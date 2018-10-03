@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Belly Button Biodiversity - Dashboard</title>
+	<meta charset="utf-8" /> 
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-delta4.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+            <h4>Belly Button Biodiversity</h4>
+        </a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <h5 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-1 sidebar-heading text-muted">
+                        <span><i class="fas fa-vials fa-lg"></i> Select Sample</span><a class="d-flex align-items-center text-muted" href="#"></a>
+                    </h5>
+                    <div class="d-flex flex-row justify-content-between px-4 mt-2 mb-1">
+                        <div class="w-50 bbb--samples">
+                            <select class="form-control" id="bbb--select-sample"></select>
+                        </div>                     
+                    </div>
+                    <h5 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-1 sidebar-heading  text-muted">
+                        <span><i class="fas fa-table fa-lg"></i> Sample Metadata</span><a class="d-flex align-items-center text-muted" href="#"></a>
+                    </h5>
+                    <div class="d-flex flex-row justify-content-between mt-2">
+                        <div class="bbb--samples bbb--fluid">
+                            <div id="bbb--sample-metadata" class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr><th>Sample</th>
+										   <th class="text-right"><span id="bbb--meta-sample" class="bbb--metadata text-right">940</span></th>
+										</tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th>Age</th><th>Ethnicity</th></tr>
+                                        <tr>
+                                            <td class="text-center"><span id="bbb--meta-age" class="bbb--metadata">24</span></td>
+                                            <td rowspan="3"><span id="bbb--meta-ethnicity" class="bbb--metadata w-100">Caucasian</span></td>
+										</tr>
+                                        <tr><th>Gender</th></tr>
+                                        <tr>
+											<td class="text-center"><span id="bbb--meta-gender" class="bbb--metadata">F</span></td>
+                                        </tr>
+										<tr><th>BBType</th><th>Location</th></tr>
+										<tr>
+											<td class="text-center"><span id="bbb--meta-bbtype" class="bbb--metadata">2</span></td>
+											<td rowspan="0"><span id="bbb--meta-location" class="bbb--metadata w-100">Beaufort/NC</span>B</td>											
+										</tr>
+											<th>WFreq</th>
+										</tr>
+										<tr>
+											<td class="text-center"><span id="bbb--meta-wfreq" class="bbb--metadata">I</span></td>
+										</tr>
+                                    </tbody>
+                                </table>    
+                            </div>
+                        </div>                     
+                    </div>                    
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+                <div class="d-flex flex-row border-bottom">
+                    <div class="col">
+                        <div id="bbb--pie-chart"></div>
+                    </div>
+                    <div class="col">
+                        <div id="bbb--gauge-chart"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap pb-2 mb-3 border-bottom">
+                    <div class="col-md-12">
+                        <div id="bbb--bubble-chart"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
