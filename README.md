@@ -1,6 +1,6 @@
 # Belly Button Biodiversity Dashboard
 
-### Heroku Application: [https://cghayes99-belly-button-dashbrd](https://cghayes99-belly-button-dashbrd.herokuapp.com/)
+### Heroku Application: [https://cghayes99-belly-button-dashbrd.herokuapp.com](https://cghayes99-belly-button-dashbrd.herokuapp.com/)
 
 ```
 ├── app.py
