@@ -8,8 +8,7 @@ const URL_SAMPLE_METADATA = "/metadata/";
 var selectSample = d3.select(".form-control");
 
 //****************** init *****************************//
-init();
-
+init(940);
 
 //****************** Event Listeners ******************//
 
@@ -30,14 +29,12 @@ selectSample.on("change", function() {
 /*
  * start the show
  */
-function init() {
-    renderSelectSample();
-    
-    //var start = d3.select("#bbb--meta-sample").text();
-    start = 940;
+function init(start) {
+    renderSelectSample();    
     plotPie(start);
     plotBubble(start);
     plotGuage(start);
+    refreshMetadata(start);
 }
 
 /*
@@ -51,7 +48,11 @@ function renderSelectSample() {
             .data(obj)
             .enter()
             .append("option")
-            .text(function (d) { return d; });
+            .text(function (d) {
+                return d;
+            }).attr("value", function(d) {
+                return d;
+            });
     });
 }
 
@@ -62,8 +63,6 @@ function refreshMetadata(sample) {
     var url = URL_SAMPLE_METADATA + sample;
     
     d3.json(url).then((obj) => {
-        console.log("obj => "+JSON.stringify(obj));
-
         d3.select("#bbb--meta-sample").html(sample);
         d3.select("#bbb--meta-age").html(obj.AGE);
         d3.select("#bbb--meta-ethnicity").html(obj.ETHNICITY);
@@ -96,10 +95,7 @@ function plotPie(sample) {
         };
 
         var layout = {
-            autosize: true,
-            showlegend: false,
             title: "<b>Top 10 for Sample: "+ sample + "</b>"
-          
         };
 
         var plotData = [trace];
@@ -132,8 +128,8 @@ function plotBubble(sample) {
         var layout = {
             title: "<b>Sample: "+ sample + "</b>",
             margin: {
-                l: 15,
-                r: 70,
+                l: 40,
+                r: 40,
                 pad: 0
             },
         };
